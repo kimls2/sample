@@ -1,0 +1,9 @@
+//rootProject.name='sample'
+include(":app")
+include(":base")
+include(":data")
+include(":data-android")
+include(":interactors")
+include(":dto")
+include(":remote")
+//include(":rocket")

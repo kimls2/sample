@@ -1,0 +1,73 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "cc5454d6114ed2efe51f6c332f98b24e",
+    "entities": [
+      {
+        "tableName": "comics",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `marvel_comic_id` INTEGER NOT NULL, `title` TEXT NOT NULL, `description` TEXT NOT NULL, `thumbnail_path` TEXT NOT NULL, `thumbnail_extension` TEXT NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "marvelComicId",
+            "columnName": "marvel_comic_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "title",
+            "columnName": "title",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "description",
+            "columnName": "description",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "thumbnailPath",
+            "columnName": "thumbnail_path",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "thumbnailFileType",
+            "columnName": "thumbnail_extension",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [
+          {
+            "name": "index_comics_marvel_comic_id",
+            "unique": true,
+            "columnNames": [
+              "marvel_comic_id"
+            ],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_comics_marvel_comic_id` ON `${TABLE_NAME}` (`marvel_comic_id`)"
+          }
+        ],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'cc5454d6114ed2efe51f6c332f98b24e')"
+    ]
+  }
+}
