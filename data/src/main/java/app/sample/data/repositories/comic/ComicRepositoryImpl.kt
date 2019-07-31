@@ -8,8 +8,8 @@ import javax.inject.Singleton
 
 @Singleton
 class ComicRepositoryImpl @Inject constructor(
-        private val comicStore: ComicStore,
-        private val remoteComicDataSource: RemoteComicDataSource
+    private val comicStore: ComicStore,
+    private val remoteComicDataSource: RemoteComicDataSource
 ) : ComicRepository {
     override fun observeComics(): Observable<List<Comic>> = comicStore.observeComics()
 

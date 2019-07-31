@@ -8,7 +8,7 @@ import com.airbnb.epoxy.TypedEpoxyController
 import com.bumptech.glide.Glide
 
 class MainEpoxyController(
-        private val callbacks: Callbacks
+    private val callbacks: Callbacks
 ) : TypedEpoxyController<MainViewState>() {
     interface Callbacks {
         fun onItemClicked(comic: Comic)
@@ -30,5 +30,4 @@ class MainEpoxyController(
 @BindingAdapter("marvelThumbnail")
 fun loadMarvelImage(view: ImageView, thumbnailPath: String) {
     Glide.with(view).load(thumbnailPath).centerCrop().into(view)
-
 }

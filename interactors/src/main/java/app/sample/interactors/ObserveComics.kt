@@ -7,8 +7,8 @@ import io.reactivex.Observable
 import javax.inject.Inject
 
 class ObserveComics @Inject constructor(
-        private val schedulers: AppRxSchedulers,
-        private val comicRepository: ComicRepository
+    private val schedulers: AppRxSchedulers,
+    private val comicRepository: ComicRepository
 ) : SubjectInteractor<Unit, List<Comic>>() {
     override fun createObservable(params: Unit): Observable<List<Comic>> {
         return comicRepository.observeComics()

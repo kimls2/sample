@@ -7,9 +7,9 @@ import app.sample.data.entities.Comic
 import javax.inject.Inject
 
 class ComicStore @Inject constructor(
-        private val entityInserter: EntityInserter,
-        private val transactionRunner: DatabaseTransactionRunner,
-        private val comicDao: ComicDao
+    private val entityInserter: EntityInserter,
+    private val transactionRunner: DatabaseTransactionRunner,
+    private val comicDao: ComicDao
 ) {
     fun observeComics() = comicDao.comicsObservable()
     suspend fun save(comics: List<Comic>) = transactionRunner {
@@ -18,6 +18,5 @@ class ComicStore @Inject constructor(
             val entity = it.copy(id = id)
             entityInserter.insertOrUpdate(comicDao, entity)
         }
-
     }
 }

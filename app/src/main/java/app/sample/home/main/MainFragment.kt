@@ -31,7 +31,6 @@ class MainFragment : BaseFragment() {
 
         controller = MainEpoxyController(object : MainEpoxyController.Callbacks {
             override fun onItemClicked(comic: Comic) {
-
             }
         })
         binding.mainRv.apply {

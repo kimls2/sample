@@ -5,10 +5,10 @@ import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 
 class SpacingItemDecorator(
-        left: Int = 0,
-        top: Int = 0,
-        right: Int = 0,
-        bottom: Int = 0
+    left: Int = 0,
+    top: Int = 0,
+    right: Int = 0,
+    bottom: Int = 0
 ) : RecyclerView.ItemDecoration() {
 
     constructor(spacing: Int) : this(spacing, spacing, spacing, spacing)
@@ -20,10 +20,10 @@ class SpacingItemDecorator(
     }
 
     override fun getItemOffsets(
-            outRect: Rect,
-            view: View,
-            parent: RecyclerView,
-            state: RecyclerView.State
+        outRect: Rect,
+        view: View,
+        parent: RecyclerView,
+        state: RecyclerView.State
     ) {
         outRect.set(spacingRect)
     }

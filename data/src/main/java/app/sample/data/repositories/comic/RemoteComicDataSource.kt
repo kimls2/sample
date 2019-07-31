@@ -12,10 +12,10 @@ import javax.inject.Inject
 import javax.inject.Named
 
 class RemoteComicDataSource @Inject constructor(
-        @Named("apiPublicKey") private val publicKey: String,
-        @Named("apiPrivateKey") private val privateKey: String,
-        private val comicService: ComicService,
-        private val mapper: ComicResultDtoToEntities
+    @Named("apiPublicKey") private val publicKey: String,
+    @Named("apiPrivateKey") private val privateKey: String,
+    private val comicService: ComicService,
+    private val mapper: ComicResultDtoToEntities
 ) {
     suspend fun getComics(): Result<List<Comic>> {
         val hash = getHash(publicKey, privateKey)

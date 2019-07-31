@@ -16,9 +16,9 @@ import kotlinx.coroutines.launch
 import timber.log.Timber
 
 class MainViewModel @AssistedInject constructor(
-        @Assisted initialState: MainViewState,
-        observeComics: ObserveComics,
-        private val updateComics: UpdateComics
+    @Assisted initialState: MainViewState,
+    observeComics: ObserveComics,
+    private val updateComics: UpdateComics
 ) : BaseViewModel<MainViewState>(initialState) {
     @AssistedInject.Factory
     interface Factory {
@@ -54,6 +54,5 @@ class MainViewModel @AssistedInject constructor(
     }
 
     fun onItemClicked(comic: Comic) {
-
     }
 }

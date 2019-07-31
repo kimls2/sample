@@ -22,9 +22,9 @@ object RemoteModule {
     @Singleton
     @Provides
     fun provideOkHttpClient(
-            @Named("cache") cacheDir: File,
-            @Named("stetho") interceptor: Interceptor,
-            @Named("apiPublicKey") pubicKey: String
+        @Named("cache") cacheDir: File,
+        @Named("stetho") interceptor: Interceptor,
+        @Named("apiPublicKey") pubicKey: String
     ): OkHttpClient {
         val builder = OkHttpClient().newBuilder()
         builder.apply {

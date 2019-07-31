@@ -80,7 +80,6 @@ class SamplePlugin : Plugin<Project> {
     }
 
     private fun BaseExtension.configureCommonAndroidOptions() {
-
         compileSdkVersion(SampleBuildConfigs.compileSdk)
         buildToolsVersion(SampleBuildConfigs.buildtoolsVersion)
         defaultConfig.apply {

@@ -4,6 +4,6 @@ import app.sample.data.entities.Comic
 import com.airbnb.mvrx.MvRxState
 
 data class MainViewState(
-        val isLoading: Boolean = false,
-        val comics: List<Comic> = emptyList()
+    val isLoading: Boolean = false,
+    val comics: List<Comic> = emptyList()
 ) : MvRxState

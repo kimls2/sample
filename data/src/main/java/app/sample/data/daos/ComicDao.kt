@@ -11,5 +11,5 @@ abstract class ComicDao : EntityDao<Comic> {
     abstract fun comicsObservable(): Observable<List<Comic>>
 
     @Query("SELECT id from comics WHERE marvel_comic_id=:id")
-    abstract fun entityIdByMarvelId(id: Int):Long?
+    abstract fun entityIdByMarvelId(id: Int): Long?
 }

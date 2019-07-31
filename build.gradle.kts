@@ -25,17 +25,17 @@ allprojects {
 }
 
 subprojects {
-//    apply(plugin = "com.diffplug.gradle.spotless")
-//    spotless {
-//        kotlin {
-//            target("**/*.kt")
-//            ktlint("0.31.0")
-//        }
-//    }
+    apply(plugin = "com.diffplug.gradle.spotless")
+    spotless {
+        kotlin {
+            target("**/*.kt")
+            ktlint("0.31.0")
+        }
+    }
     tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().all {
         kotlinOptions.apply {
             jvmTarget = "1.8"
-//            allWarningsAsErrors = true
+            allWarningsAsErrors = true
         }
     }
 }

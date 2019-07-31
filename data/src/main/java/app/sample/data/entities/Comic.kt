@@ -12,12 +12,12 @@ import androidx.room.PrimaryKey
         ]
 )
 data class Comic(
-        @PrimaryKey(autoGenerate = true) @ColumnInfo override val id: Long = 0,
-        @ColumnInfo(name = "marvel_comic_id") val marvelComicId: Int,
-        @ColumnInfo(name = "title") val title: String,
-        @ColumnInfo(name = "description") val description: String,
-        @ColumnInfo(name = "thumbnail_path") val thumbnailPath: String,
-        @ColumnInfo(name = "thumbnail_extension") val thumbnailFileType: String
+    @PrimaryKey(autoGenerate = true) @ColumnInfo override val id: Long = 0,
+    @ColumnInfo(name = "marvel_comic_id") val marvelComicId: Int,
+    @ColumnInfo(name = "title") val title: String,
+    @ColumnInfo(name = "description") val description: String,
+    @ColumnInfo(name = "thumbnail_path") val thumbnailPath: String,
+    @ColumnInfo(name = "thumbnail_extension") val thumbnailFileType: String
 ) : SampleEntity {
 
     fun getThumbnailPathWithXlargeSize(): String {
